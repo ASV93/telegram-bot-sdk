@@ -113,7 +113,7 @@ class TelegramClient
         } else {
             $options = ['query' => $request->getParams()];
         }
-
+		$options['verify'] = false;
         $rawResponse = $this->httpClientHandler->send($url, $method, $headers, $options, $timeOut, $isAsyncRequest, $connectTimeOut);
 
         $returnResponse = $this->getResponse($request, $rawResponse);
